@@ -7,7 +7,7 @@ class Todo {
     add(todo) {
         this.todos.push(todo);
     }
-
+    
     read() {
         this.todos.forEach((todo) => console.log(todo));
     }
