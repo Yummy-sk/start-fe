@@ -1,0 +1,23 @@
+#board {
+    width: 500px;
+    height: 500px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    border: 1px solid #eee;
+}
+
+.black,
+.white {
+    width: 100%;
+    height: 100%;
+}
+
+.black {
+    background: #000;
+}
+
+.white {
+    background: #fff;
+}
