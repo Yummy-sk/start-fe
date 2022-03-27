@@ -21,3 +21,8 @@
 .white {
     background: #fff;
 }
+
+.black.sel,
+.white.sel {
+    background: red;
+}

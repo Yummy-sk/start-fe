@@ -3,49 +3,8 @@
     <head>
         <meta charset="utf-8" />
         <link rel="stylesheet" href="./style.css" />
+        <script defer src="./app.js" type="module"></script>
         <title>source</title>
     </head>
-    <body>
-        <div id="board">
-            <span class="black"></span>
-            <span class="white"></span>
-            <span class="black"></span>
-            <span class="white"></span>
-            <span class="white"></span>
-            <span class="black"></span>
-            <span class="white"></span>
-            <span class="black"></span>
-            <span class="black"></span>
-            <span class="white"></span>
-            <span class="black"></span>
-            <span class="white"></span>
-            <span class="white"></span>
-            <span class="black"></span>
-            <span class="white"></span>
-            <span class="black"></span>
-        </div>
-        <script>
-            const board = document.getElementById('board');
-            const nodes = board.children;
-
-            board.addEventListener('click', e => {
-                e.target.style.background = 'red';
-
-                for (let i = 0, length = board.children.length; i < length; i++) {
-                    const name = nodes[i].className;
-
-                    if (nodes[i] !== e.target) {
-                        if (name === 'black') {
-                            nodes[i].style.background = '#000';
-                            continue;
-                        }
-
-                        if (name === 'white') {
-                            nodes[i].style.background = '#fff';
-                        }
-                    }
-                }
-            });
-        </script>
-    </body>
+    <body></body>
 </html>
