@@ -1,0 +1,18 @@
+body {
+    padding: 10px;
+}
+.box {
+    display: block;
+
+    background-color: #ddd;
+
+    margin-bottom: 5px;
+}
+
+.box.hidden {
+    display: none;
+}
+
+.red {
+    background-color: red;
+}
