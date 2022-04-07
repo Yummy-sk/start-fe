@@ -1,0 +1,33 @@
+body {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    position: relative;
+
+    margin: 0 auto;
+    width: 80%;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #dfdfdf;
+}
+
+#box {
+    position: absolute;
+
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: blue;
+}
