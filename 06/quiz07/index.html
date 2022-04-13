@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <link rel="stylesheet" href="./style.css" />
+        <title>Quiz07 염상권</title>
+    </head>
+    <body>
+        <div class="wrap">
+            <ul>
+                <li>빨간타겟이 box영역에서만 랜덤으로 출현</li>
+                <li>빨간타겟을 클릭하면 점수 +1</li>
+                <li>빨간타겟을 클릭못하면 생명 -1</li>
+                <li>생명이 0이면 gameover 메세지 출력</li>
+            </ul>
+            <div>점수 <span id="point">0</span></div>
+            <div>생명 <span id="life">10</span></div>
+
+            <div id="box">
+                <div id="bug"></div>
+            </div>
+        </div>
+        <script src="./app.js"></script>
+    </body>
+</html>
+<!-- 
+            function moveBug() {
+                const MIN_Left = 0,
+                    MIN_Top = 0,
+                    MAX_Left = 380,
+                    MAX_Top = 380;
+                let x = Math.floor(Math.random() * (MAX_Left - MIN_Left + 1)) + MIN_Left;
+                let y = Math.floor(Math.random() * (MAX_Top - MIN_Top + 1)) + MIN_Top;
+                $bug.style.left = x + 'px';
+                $bug.style.top = y + 'px';
+            } -->
