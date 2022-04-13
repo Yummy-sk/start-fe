@@ -1,7 +1,6 @@
 const $container = document.querySelector('main');
 const $box = document.querySelector('#box');
 
-console.log($container);
 const { width: containerWidth, height: containerHeight } = $container.getBoundingClientRect();
 
 const { width: boxWidth, height: boxHeight } = $box.getBoundingClientRect();
@@ -13,6 +12,8 @@ let originX = null;
 let originY = null;
 
 $box.addEventListener('mousedown', (e) => {
+
+    console.log(originLeft);
     isDragging = true;
     originLeft = e.clientX;
     originTop = e.clientY;
@@ -29,10 +30,10 @@ document.addEventListener('mousemove', (e) => {
 
         $box.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`;
         $box.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`;
-
     }
 });
 
 document.addEventListener('mouseup', () => { 
     isDragging = false;
 });
+
