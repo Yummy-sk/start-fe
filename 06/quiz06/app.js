@@ -33,28 +33,28 @@ function App() {
 
     }
 
+    this.checkIsNumber = (value) => {
+        if (value.trim() && isNaN(value)) {
+            alert('숫자를 입력해주세요');
+            return false;
+        }
+
+        return true;
+    }
+
     this.registerEvent = () => { 
         $input.addEventListener('keyup', (e) => {
             if (e.keyCode === 13) {
-                const value = e.target.value;
-                $input.value = '';
-                if (isNaN(value)) {
-                    alert('숫자를 입력해주세요');
-                    return;
-                }
-                this.multi(value);
+                this.checkIsNumber(e.target.value) && this.multi($input.value); 
                 
+                $input.value = '';
             }
         });
 
-        $button.addEventListener('click', () => { 
-            const value = $input.value;
+        $button.addEventListener('click', (e) => { 
+            this.checkIsNumber(e.target.value) && this.multi($input.value);  
+
             $input.value = '';
-            if (isNaN(value)) {
-                alert('숫자를 입력해주세요');
-                return;
-            }
-            this.multi(value);
         });
     }
 
