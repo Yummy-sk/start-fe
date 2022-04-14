@@ -1,8 +1,13 @@
 $box = document.querySelector('.box');
 $box1 = document.querySelector('.box1');
+$box2 = document.querySelector('.box2');
+$box3 = document.querySelector('.box3');
 
 App($box);
 App($box1);
+App($box2);
+App($box3);
+
 
 function App(box) {
     const dragPos = { x: 0, y: 0 };
