@@ -8,9 +8,9 @@ function App(box) {
     const dragPos = { x: 0, y: 0 };
     const distance = { x: 0, y: 0 };
 
-    const onBoxDown = (event) => {
+    const onBoxDown = (e) => {
         //드래그 시작 위치 설정
-        [dragPos.x, dragPos.y] = [event.clientX, event.clientY];
+        [dragPos.x, dragPos.y] = [e.clientX, e.clientY];
 
         document.addEventListener('mousemove', boxMove);
         document.addEventListener('mouseup', removeListener);
