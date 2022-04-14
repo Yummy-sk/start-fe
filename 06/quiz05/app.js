@@ -1,28 +1,18 @@
-let numBox = 0;
+const $box = document.querySelector('.box');
+const $box1 = document.querySelector('.box1');
 
-const createDOMDOM = () => {
-    const $box = document.createElement('div');
-    $box.classList.add('box', `box${numBox}`);
-    $box.style.left = numBox ? `${200 + (100 * numBox)}px` : '200px';
-    $box.innerText = 'Drag Me';
+App($box);
+App($box1);
 
-    return $box;
-}
-
-function App() {
-    const $box = createDOMDOM();
-    const $body = document.createElement('body');
+function App(box) {
     const dragPos = { x: 0, y: 0 };
     const distance = { x: 0, y: 0 };
-    numBox++;
-    console.log($box);
 
-
-    const onBoxDown = (e) => {
+    const onBoxDown = (event) => {
         //드래그 시작 위치 설정
-        [dragPos.x, dragPos.y] = [e.clientX, e.clientY];
+        [dragPos.x, dragPos.y] = [event.clientX, event.clientY];
 
-        document.addEventListener('mousemove', onBoxMove);
+        document.addEventListener('mousemove', boxMove);
         document.addEventListener('mouseup', removeListener);
     }
 
@@ -30,7 +20,7 @@ function App() {
     // 원래 마우스의 위치와
     // 움직인 마우스의 위치를 통해
     // BOX이동
-    const onBoxMove = (e) => {
+    const boxMove = (e) => {
         //마우스가 움직인 거리
         [distance.x, distance.y] = [dragPos.x - e.clientX, dragPos.y - e.clientY];
 
@@ -38,20 +28,14 @@ function App() {
         [dragPos.x, dragPos.y] = [e.clientX, e.clientY];
 
         //랜더링
-        $box.style.left = `${$box.offsetLeft - distance.x}px`;
-        $box.style.top = `${$box.offsetTop - distance.y}px`;
+        box.style.left = `${box.offsetLeft - distance.x}px`;
+        box.style.top = `${box.offsetTop - distance.y}px`;
     }
 
     const removeListener = () => {
         document.removeEventListener('mouseup', removeListener);
-        document.removeEventListener('mousemove', onBoxMove);
+        document.removeEventListener('mousemove', boxMove);
     }
 
-    $box.addEventListener('mousedown', onBoxDown);
-    $body.insertAdjacentElement('afterend', $box);
+    box.addEventListener('mousedown', onBoxDown);
 }
-
-App();
-App();
-App();
-App();
