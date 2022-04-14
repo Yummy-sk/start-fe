@@ -34,11 +34,14 @@ function App() {
                     return;
                 }
             }
-                
-            this.moveBugPos();
         });
     }
 
+    this.moveBug = () => {
+        setInterval(this.moveBugPos, 1500);
+    }
+    
+    this.moveBug();
     this.onBoxClick();
 }
 
