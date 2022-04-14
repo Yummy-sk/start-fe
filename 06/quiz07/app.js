@@ -7,6 +7,7 @@ function App() {
     const $box = $('#box');
     const $bug = $('#bug');
     const [MIN_X, MIN_Y, MAX_X, MAX_Y] = [0, 0, $box.offsetWidth - 20, $box.offsetHeight - 20];
+    const [INIT_SCORE, INIT_LIFE] = [0, 10];
 
     this.moveBugPos = () => {
         $bug.style.left = getRandomInt(MAX_X, MIN_X) + 'px';
@@ -28,8 +29,8 @@ function App() {
                 if (!curLife) {
                     alert('Game Over');
 
-                    $score.innerText = 0;
-                    $life.innerText = 10;
+                    $score.innerText = INIT_SCORE;
+                    $life.innerText = INIT_LIFE;
                     return;
                 }
             }
