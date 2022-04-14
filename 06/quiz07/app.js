@@ -37,11 +37,11 @@ function App() {
         });
     }
 
-    this.moveBug = () => {
+    this.moveBugByInterval = () => {
         setInterval(this.moveBugPos, 1500);
     }
     
-    this.moveBug();
+    this.moveBugByInterval();
     this.onBoxClick();
 }
 
