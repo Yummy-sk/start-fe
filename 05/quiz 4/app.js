@@ -1,39 +1,21 @@
-const $container = document.querySelector('main');
-const $box = document.querySelector('#box');
+const $box = document.querySelector('.box');
+const initialMousePos = { x: 0, y: 0 };
+const offset = { x: 0, y: 0 };
 
-const { width: containerWidth, height: containerHeight } = $container.getBoundingClientRect();
+const move = e => {
+  offset.x = e.clientX - initialMousePos.x;
+  offset.y = e.clientY - initialMousePos.y;
 
-const { width: boxWidth, height: boxHeight } = $box.getBoundingClientRect();
+  $box.style.transform = `translate3d(${offset.x}px, ${offset.y}px, 0)`;
+};
 
-let isDragging = null;
-let originLeft = null;
-let originTop = null;
-let originX = null;
-let originY = null;
+$box.addEventListener('mousedown', e => {
+  initialMousePos.x = e.clientX - offset.x;
+  initialMousePos.y = e.clientY - offset.y;
 
-$box.addEventListener('mousedown', (e) => {
-
-    console.log(originLeft);
-    isDragging = true;
-    originLeft = e.clientX;
-    originTop = e.clientY;
-    originX = $box.offsetLeft;
-    originY = $box.offsetTop;
+  document.addEventListener('mousemove', move);
 });
 
-document.addEventListener('mousemove', (e) => {
-    if (isDragging) {
-        const diffX = e.clientX - originX;
-        const diffY = e.clientY - originY
-        const endOfXPoint = containerWidth - boxWidth;
-        const endOfYPoint = containerHeight - boxHeight;
-
-        $box.style.left = `${Math.min(Math.max(0, originLeft + diffX), endOfXPoint)}px`;
-        $box.style.top = `${Math.min(Math.max(0, originTop + diffY), endOfYPoint)}px`;
-    }
+document.addEventListener('mouseup', () => {
+  document.removeEventListener('mousemove', move);
 });
-
-document.addEventListener('mouseup', () => { 
-    isDragging = false;
-});
-

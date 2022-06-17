@@ -1,18 +1,10 @@
 body {
-    padding: 10px;
+  padding: 10px;
 }
 .box {
-    display: block;
+  display: block;
 
-    background-color: #ddd;
+  background-color: #ddd;
 
-    margin-bottom: 5px;
-}
-
-.box.hidden {
-    display: none;
-}
-
-.red {
-    background-color: red;
+  margin-bottom: 5px;
 }
