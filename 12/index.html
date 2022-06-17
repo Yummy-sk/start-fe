@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <script src="/app.js" type="module" defer></script>
+    <script src="app.js" type="module" defer></script>
     <title>2017106119 염상권</title>
   </head>
   <body>
     <form id="avg">
+      <h1>평균값 구하기</h1>
       <input type="text" placeholder="','를 통해 구분해주세요" />
       <input type="submit" value="입력" />
     </form>
     <br />
     <form id="rand">
-      <input type="text" placeholder="최소값" />
-      <input type="text" placeholder="최대값" />
+      <h1>랜덤값 구하기</h1>
+      <input id="min" type="text" placeholder="최소값" />
+      <input id="max" type="text" placeholder="최대값" />
       <input type="submit" value="입력" />
     </form>
   </body>
